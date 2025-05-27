@@ -1,4 +1,4 @@
-# altscore-challenge
+# api-challenges-alts
 
 Register and save key on .env, with "apikey" keyname on the .env.
 
