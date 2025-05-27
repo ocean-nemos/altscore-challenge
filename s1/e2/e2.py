@@ -1,5 +1,4 @@
 import utils.session as s
-import utils.ui as ui
 
 class Position:
 
@@ -29,7 +28,7 @@ def get_stars():
     response0 = s.get(endpoint(1, "id", "desc"))
 
     if response0.status_code != 200:
-        ui.error(f"Failed to fetch initial request to obtain total stars: {response0.status_code} - {response0.text}")
+        print(f"Failed to fetch initial request to obtain total stars: {response0.status_code} - {response0.text}")
         return
 
     total_stars = response0.headers["x-total-count"]
@@ -39,7 +38,7 @@ def get_stars():
         response = s.get(endpoint(p, "id", "desc"))
 
         if response.status_code != 200:
-            ui.error(f"Failed to fetch stars from page {p}: {response.status_code} - {response.text}")
+            print(f"Failed to fetch stars from page {p}: {response.status_code} - {response.text}")
             return
 
         if len(response.json()) == 0:
@@ -55,7 +54,7 @@ def get_stars():
 
 def find_avg_resonance(stars: list[Star]) -> int:
     if not stars:
-        ui.error("No stars found to calculate average resonance.")
+        print("No stars found to calculate average resonance.")
         return 0
 
     total_resonance = sum(star.resonance for star in stars)

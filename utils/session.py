@@ -2,6 +2,7 @@ import requests
 import os
 import time
 from dotenv import load_dotenv
+import utils.ui as ui
 
 load_dotenv()
 
@@ -66,7 +67,7 @@ def add_auth():
 def init():
 
     # clear console
-    os.system('cls' if os.name == 'nt' else 'clear')
+    ui.clear()
 
     # set up session auth
     add_auth()
