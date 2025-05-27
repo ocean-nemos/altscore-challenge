@@ -24,6 +24,12 @@ def get(endpoint, doc_it = False, **kwargs):
         doc_call("GET", response, endpoint)
     return response
 
+def get_external(url, doc_it = False, ** kwargs):
+    response = s.get(url, **kwargs)
+    if doc_it:
+        doc_call("GET", response, url)
+    return response
+
 def post(endpoint, doc_it = False, **kwargs):
     response = s.post(base_url + endpoint, **kwargs)
     if doc_it:
