@@ -59,7 +59,7 @@ def find_avg_resonance(stars: list[Star]) -> int:
         return 0
 
     total_resonance = sum(star.resonance for star in stars)
-    avg_resonance = total_resonance // len(stars)
+    avg_resonance = round(total_resonance / len(stars))
 
     print(f"\nAverage resonance: {avg_resonance}")
     return avg_resonance
