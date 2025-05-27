@@ -15,7 +15,7 @@ python -m s1.e1.e1
 |season|problem|finished? (x)|
 |---|---|---|
 |1|e1|x|
-|1|e2||
+|1|e2|x|
 |1|e3||
 |1|e4||
 |1|e5||
